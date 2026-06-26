@@ -1,0 +1,29 @@
+</main>
+<footer class="site-footer" style="background:var(--color-primary);color:#fff;padding:60px 20px 30px;">
+<div class="container" style="max-width:1200px;margin:0 auto;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-bottom:40px;">
+<div><h3 style="font-family:var(--font-heading);font-size:1.4rem;margin-bottom:12px;">Psychic Soulmate Reading</h3>
+<p style="opacity:.8;font-size:.95rem;line-height:1.6;">Find your soulmate with psychic insight — love readings that reveal your path.</p></div>
+<div><h4 style="font-size:1rem;margin-bottom:12px;opacity:.9;">Quick Links</h4>
+<ul style="list-style:none;padding:0;margin:0;">
+<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:rgba(255,255,255,.75);text-decoration:none;line-height:2;">Home</a></li>
+<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" style="color:rgba(255,255,255,.75);text-decoration:none;line-height:2;">Blog</a></li>
+<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" style="color:rgba(255,255,255,.75);text-decoration:none;line-height:2;">About</a></li>
+</ul></div>
+<div><h4 style="font-size:1rem;margin-bottom:12px;opacity:.9;">Legal</h4>
+<ul style="list-style:none;padding:0;margin:0;">
+<li><a href="<?php echo esc_url(home_url('/privacy-policy/'));?>" style="color:rgba(255,255,255,.75);text-decoration:none;line-height:2;">Privacy Policy</a></li>
+<li><a href="<?php echo esc_url(home_url('/terms/'));?>" style="color:rgba(255,255,255,.75);text-decoration:none;line-height:2;">Terms of Service</a></li>
+<li><a href="<?php echo esc_url(home_url('/disclaimer/'));?>" style="color:rgba(255,255,255,.75);text-decoration:none;line-height:2;">Disclaimer</a></li>
+<li><a href="<?php echo esc_url(home_url('/cookie-policy/'));?>" style="color:rgba(255,255,255,.75);text-decoration:none;line-height:2;">Cookie Policy</a></li>
+</ul></div>
+<?php if ( is_active_sidebar( 'psr-footer' ) ) : ?><div><?php dynamic_sidebar( 'psr-footer' ); ?></div><?php endif; ?>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,.15);padding-top:24px;text-align:center;font-size:.85rem;opacity:.7;">
+<p>&copy; <?php echo esc_html( date( 'Y' ) ); ?> Psychic Soulmate Reading. All rights reserved.</p>
+<p>For entertainment purposes only. Must be 18+.</p></div>
+</div></footer>
+<a href="#" id="psrBtt" style="position:fixed;bottom:30px;right:30px;width:44px;height:44px;background:var(--color-primary);color:#fff;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:1.3rem;text-decoration:none;box-shadow:var(--shadow-md);z-index:99;" aria-label="Back to top">&uarr;</a>
+<script>(function(){var b=document.getElementById('psrBtt');if(b)window.addEventListener('scroll',function(){b.style.display=window.scrollY>400?'flex':'none'})})()</script>
+<?php wp_footer(); ?>
+</body></html>
