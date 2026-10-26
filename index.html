@@ -299,7 +299,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=global-styles-inline-css */
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Josefin+Sans:wght@300;400;500;600;700&amp;display=swap" id="psr-fonts-css" media="all" rel="stylesheet">
-<link href="https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/style.css?ver=2.0.0" id="psr-style-css" media="all" rel="stylesheet">
+<link href="https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/style.css?ver=2.0.1" id="psr-style-css" media="all" rel="stylesheet">
 <meta content="WordPress 7.1.3" name="generator"/>
 <link href="https://psychic-soulmate-reading.com/" rel="canonical"/>
 <link href="https://psychic-soulmate-reading.com/wp-content/uploads/2026/03/site_28_favicon.png" rel="icon" sizes="32x32"/>
@@ -416,12 +416,34 @@ body.wp-theme-psr-theme .tests .section-head h2,
 body.wp-theme-psr-theme .reflect .section-head h2,
 body.wp-theme-psr-theme .quiz h2,
 body.wp-theme-psr-theme .final h2{font-size:clamp(34px,3.8vw,52px);line-height:1.15}
+
+/* Контраст темних секцій; правила обмежені головною сторінкою. */
+body.wp-theme-psr-theme.psr-landing .reader h3,
+body.wp-theme-psr-theme.psr-landing .final h2{color:var(--cream)}
+body.wp-theme-psr-theme.psr-landing .foot-col h5{color:var(--rose-soft)}
+body.wp-theme-psr-theme.psr-landing .nav-brand,
+body.wp-theme-psr-theme.psr-landing .nav-brand:visited,
+body.wp-theme-psr-theme.psr-landing .nav-brand:hover{color:var(--cream)!important}
+.landing-menu-toggle{display:none}
+body.psr-landing .nav a:focus-visible,
+body.psr-landing .landing-menu-toggle:focus-visible{outline:2px solid var(--cream);outline-offset:4px}
+@media(max-width:900px){
+  body.psr-landing .nav-inner{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:10px 12px;padding:12px 20px}
+  body.psr-landing .nav .nav-brand{min-width:0;gap:8px;font-size:20px;line-height:1.15}
+  body.psr-landing .nav-brand-mark{flex:0 0 24px;width:24px;height:24px}
+  body.psr-landing .nav .btn{grid-column:1/-1;justify-content:center;width:100%;padding:10px 14px;font-size:10px;line-height:1.4}
+  body.psr-landing .nav-links{display:flex;grid-column:1/-1;flex-direction:column;gap:0}
+  body.psr-landing.landing-nav-ready .nav-links{display:none}
+  body.psr-landing.landing-nav-ready .nav-links.is-open{display:flex}
+  body.psr-landing .nav-links a{display:block;padding:12px 4px;font-size:15px;line-height:1.4}
+  body.psr-landing.landing-nav-ready .landing-menu-toggle{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid var(--rose-soft);border-radius:6px;color:var(--cream);background:transparent;font-size:24px;cursor:pointer}
+}
 </style>
 <!-- i18n hreflang (WP-Net-Control) -->
 <link href="https://psychic-soulmate-reading.com/" hreflang="en" rel="alternate"/>
 <link href="https://nl.psychic-soulmate-reading.com/" hreflang="nl" rel="alternate"/>
 <link href="https://psychic-soulmate-reading.com/" hreflang="x-default" rel="alternate"/>
-</head>
+</link></link></meta></meta></link></meta></head>
 <body class="home wp-singular page-template-default page page-id-5 wp-theme-psr-theme psr-landing">
 <header class="nav">
 <div class="nav-inner">
@@ -435,7 +457,8 @@ body.wp-theme-psr-theme .final h2{font-size:clamp(34px,3.8vw,52px);line-height:1
 </svg>
 </span>
       Psychic Soulmate Reading    </a>
-<ul class="nav-links">
+<button aria-controls="psrLandingNav" aria-expanded="false" aria-label="Toggle navigation" class="landing-menu-toggle" type="button"><span aria-hidden="true">☰</span></button>
+<ul aria-label="Main navigation" class="nav-links" id="psrLandingNav">
 <li><a class="active" href="https://psychic-soulmate-reading.com/soulmate-reading/">Soulmate Reading</a></li>
 <li><a href="https://psychic-soulmate-reading.com/love-compatibility/">Love Compatibility</a></li>
 <li><a href="https://psychic-soulmate-reading.com/timing-and-destiny/">Timing &amp; Destiny</a></li>
@@ -686,7 +709,7 @@ body.wp-theme-psr-theme .final h2{font-size:clamp(34px,3.8vw,52px);line-height:1
 <script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/psr-theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
-<script id="psr-nav-js" src="https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/js/navigation.js?ver=2.0.0"></script>
+<script id="psr-nav-js" src="https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/js/navigation.js?ver=2.0.1"></script>
 <script id="wp-emoji-settings" type="application/json">
 {"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://psychic-soulmate-reading.com/wp-includes/js/wp-emoji-release.min.js?ver=7.1.3"}}
 </script>

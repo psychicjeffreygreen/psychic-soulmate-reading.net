@@ -1,7 +1,7 @@
 /*
 Theme Name: psr-theme
 Author: WP Net Control
-Version: 2.0.0
+Version: 2.0.1
 Text Domain: psr-theme
 */
 
@@ -672,4 +672,10 @@ img { max-width: 100%; height: auto; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* Світлі заголовки темного футера мають переважати загальні стилі Customizer. */
+body.wp-theme-psr-theme .site-footer h3,
+body.wp-theme-psr-theme .site-footer h4 {
+  color: #fff;
 }
