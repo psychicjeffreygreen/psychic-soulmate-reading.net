@@ -1,0 +1,130 @@
+/* Базові стилі лендингу (вилучено з front-page.php): токени, nav, кнопки, футер, перекриття Customizer. Генеровано один раз. */
+:root{
+  --burgundy:#5C1A33;
+  --burgundy-dark:#2A0F1C;
+  --burgundy-darker:#1c0a13;
+  --rose:#B76E79;
+  --rose-soft:#d49aa3;
+  --lavender:#E8DFF5;
+  --cream:#FFF8F4;
+  --cream-warm:#fbeee4;
+  --text:#3a1f2a;
+  --text-light:#7a5a64;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Josefin Sans',system-ui,sans-serif;
+  font-size:16px;line-height:1.7;color:var(--text);background:var(--cream);
+  font-weight:300;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;margin:0;letter-spacing:-.005em}
+h1{font-size:clamp(44px,5.6vw,76px);line-height:1.05;font-weight:400}
+h2{font-size:clamp(34px,3.8vw,52px);line-height:1.15;font-weight:500}
+h3{font-size:24px;line-height:1.3}
+em,.italic{font-style:italic}
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:400;
+  color:var(--rose);
+}
+.eyebrow::before,.eyebrow::after{content:'\2726';font-size:10px;color:var(--rose);opacity:.85}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 34px;border-radius:999px;
+  font-family:'Josefin Sans',sans-serif;font-weight:400;
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  border:1px solid transparent;cursor:pointer;transition:all .3s ease;
+}
+.btn-rose{background:var(--rose);color:var(--cream)}
+.btn-rose:hover{background:#a35b66;box-shadow:0 10px 30px rgba(183,110,121,.35);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--cream);border-color:rgba(232,223,245,.45)}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose-soft)}
+.btn-burgundy{background:var(--burgundy);color:var(--cream)}
+.btn-burgundy:hover{background:#491327;transform:translateY(-1px)}
+
+/* === NAV === */
+.nav{position:sticky;top:0;z-index:50;background:rgba(42,15,28,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(183,110,121,.18)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1200px;margin:0 auto;gap:24px}
+.nav-brand{display:flex;align-items:center;gap:12px;color:var(--cream);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;font-weight:500}
+.nav-brand-mark{width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:var(--rose-soft)}
+.nav-brand-mark svg{width:24px;height:24px}
+.nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{color:var(--cream);font-size:13px;font-weight:300;letter-spacing:.05em;opacity:.85;transition:opacity .2s,color .2s;padding-bottom:3px;border-bottom:1px solid transparent}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--rose-soft);border-bottom-color:var(--rose)}
+.nav .btn{padding:11px 24px;font-size:11px}
+@media(max-width:900px){.nav-links{display:none}.nav-inner{padding:14px 20px}}
+
+/* === FOOTER === */
+.foot{background:var(--burgundy-darker);color:rgba(255,248,244,.55);padding:80px 0 28px}
+.foot-orn{display:flex;justify-content:center;color:var(--rose);font-size:18px;letter-spacing:18px;margin-bottom:42px;opacity:.6}
+.foot-cols{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:50px;margin-bottom:50px;padding-bottom:50px;border-bottom:1px solid rgba(255,248,244,.06)}
+.foot-brand .nav-brand{margin-bottom:14px}
+.foot-brand p{font-size:14px;line-height:1.7;color:rgba(255,248,244,.55);margin:0;font-weight:300}
+.foot-col h5{font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin:0 0 18px;font-weight:500}
+.foot-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.foot-col a{font-size:14px;color:rgba(255,248,244,.6);transition:color .2s;font-weight:300}
+.foot-col a:hover{color:var(--rose-soft)}
+.foot-bottom{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,248,244,.4);flex-wrap:wrap;gap:14px;font-weight:300}
+@media(max-width:980px){.foot-cols{grid-template-columns:1fr 1fr;gap:36px}.foot{padding:48px 0 24px}}
+
+/* Customizer custom_css (loaded via wp_head) ships a blanket
+   `body.wp-theme-psr-theme a { color: var(--color-primary) }` (= burgundy)
+   that wins over .nav-brand / .nav-links a / .btn-* on specificity.
+   These overrides match the same (0,2,1) and win on source order. */
+body.wp-theme-psr-theme .nav-brand,
+body.wp-theme-psr-theme .nav-brand:visited,
+body.wp-theme-psr-theme .nav-brand:hover{color:var(--cream)}
+body.wp-theme-psr-theme .nav-links a,
+body.wp-theme-psr-theme .nav-links a:visited{color:var(--cream);opacity:.88}
+body.wp-theme-psr-theme .nav-links a:hover,
+body.wp-theme-psr-theme .nav-links a.active{color:var(--rose-soft);opacity:1}
+body.wp-theme-psr-theme .btn-rose,
+body.wp-theme-psr-theme .btn-rose:hover,
+body.wp-theme-psr-theme .btn-burgundy,
+body.wp-theme-psr-theme .btn-burgundy:hover{color:var(--cream)}
+body.wp-theme-psr-theme .btn-ghost{color:var(--cream)}
+body.wp-theme-psr-theme .btn-ghost:hover{color:var(--rose-soft)}
+body.wp-theme-psr-theme .hero-sublink{color:var(--rose-soft)}
+body.wp-theme-psr-theme .hero-sublink:hover{color:var(--rose)}
+body.wp-theme-psr-theme .path-link,
+body.wp-theme-psr-theme .path-link:hover{color:var(--rose)}
+body.wp-theme-psr-theme .reader-link,
+body.wp-theme-psr-theme .reader-link:hover{color:var(--rose-soft)}
+body.wp-theme-psr-theme .foot-col a{color:rgba(255,248,244,.6)}
+body.wp-theme-psr-theme .foot-col a:hover{color:var(--rose-soft)}
+/* Customizer also clamps h1/h2 smaller than the landing design. Restore scale. */
+body.wp-theme-psr-theme .hero-text h1{font-size:clamp(44px,5.6vw,76px);line-height:1.05}
+body.wp-theme-psr-theme .section-head h2,
+body.wp-theme-psr-theme .gallery .section-head h2,
+body.wp-theme-psr-theme .discover .section-head h2,
+body.wp-theme-psr-theme .tests .section-head h2,
+body.wp-theme-psr-theme .reflect .section-head h2,
+body.wp-theme-psr-theme .quiz h2,
+body.wp-theme-psr-theme .final h2{font-size:clamp(34px,3.8vw,52px);line-height:1.15}
+
+/* Контраст темних секцій; правила обмежені головною сторінкою. */
+body.wp-theme-psr-theme.psr-landing .reader h3,
+body.wp-theme-psr-theme.psr-landing .final h2{color:var(--cream)}
+body.wp-theme-psr-theme.psr-landing .foot-col h5{color:var(--rose-soft)}
+body.wp-theme-psr-theme.psr-landing .nav-brand,
+body.wp-theme-psr-theme.psr-landing .nav-brand:visited,
+body.wp-theme-psr-theme.psr-landing .nav-brand:hover{color:var(--cream)!important}
+.landing-menu-toggle{display:none}
+body.psr-landing .nav a:focus-visible,
+body.psr-landing .landing-menu-toggle:focus-visible{outline:2px solid var(--cream);outline-offset:4px}
+@media(max-width:900px){
+  body.psr-landing .nav-inner{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:10px 12px;padding:12px 20px}
+  body.psr-landing .nav .nav-brand{min-width:0;gap:8px;font-size:20px;line-height:1.15}
+  body.psr-landing .nav-brand-mark{flex:0 0 24px;width:24px;height:24px}
+  body.psr-landing .nav .btn{grid-column:1/-1;justify-content:center;width:100%;padding:10px 14px;font-size:10px;line-height:1.4}
+  body.psr-landing .nav-links{display:flex;grid-column:1/-1;flex-direction:column;gap:0}
+  body.psr-landing.landing-nav-ready .nav-links{display:none}
+  body.psr-landing.landing-nav-ready .nav-links.is-open{display:flex}
+  body.psr-landing .nav-links a{display:block;padding:12px 4px;font-size:15px;line-height:1.4}
+  body.psr-landing.landing-nav-ready .landing-menu-toggle{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid var(--rose-soft);border-radius:6px;color:var(--cream);background:transparent;font-size:24px;cursor:pointer}
+}

@@ -10,243 +10,481 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;family=Josefin+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
+
 :root{
+
   --burgundy:#5C1A33;
+
   --burgundy-dark:#2A0F1C;
+
   --burgundy-darker:#1c0a13;
+
   --rose:#B76E79;
+
   --rose-soft:#d49aa3;
+
   --lavender:#E8DFF5;
+
   --cream:#FFF8F4;
+
   --cream-warm:#fbeee4;
+
   --text:#3a1f2a;
+
   --text-light:#7a5a64;
+
 }
+
 *{box-sizing:border-box}
+
 html,body{margin:0;padding:0}
+
 body{
+
   font-family:'Josefin Sans',system-ui,sans-serif;
+
   font-size:16px;line-height:1.7;color:var(--text);background:var(--cream);
+
   font-weight:300;-webkit-font-smoothing:antialiased;
+
 }
+
 img{max-width:100%;display:block}
+
 a{color:inherit;text-decoration:none}
+
 h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;margin:0;letter-spacing:-.005em}
+
 h1{font-size:clamp(44px,5.6vw,76px);line-height:1.05;font-weight:400}
+
 h2{font-size:clamp(34px,3.8vw,52px);line-height:1.15;font-weight:500}
+
 h3{font-size:24px;line-height:1.3}
+
 em,.italic{font-style:italic}
+
 .container{max-width:1200px;margin:0 auto;padding:0 32px}
+
 .eyebrow{
+
   display:inline-flex;align-items:center;gap:14px;
+
   font-family:'Josefin Sans',sans-serif;
+
   font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:400;
+
   color:var(--rose);
+
 }
+
 .eyebrow::before,.eyebrow::after{content:'\2726';font-size:10px;color:var(--rose);opacity:.85}
+
 .btn{
+
   display:inline-flex;align-items:center;gap:10px;
+
   padding:15px 34px;border-radius:999px;
+
   font-family:'Josefin Sans',sans-serif;font-weight:400;
+
   font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+
   border:1px solid transparent;cursor:pointer;transition:all .3s ease;
+
 }
+
 .btn-rose{background:var(--rose);color:var(--cream)}
+
 .btn-rose:hover{background:#a35b66;box-shadow:0 10px 30px rgba(183,110,121,.35);transform:translateY(-1px)}
+
 .btn-ghost{background:transparent;color:var(--cream);border-color:rgba(232,223,245,.45)}
+
 .btn-ghost:hover{border-color:var(--rose);color:var(--rose-soft)}
+
 .btn-burgundy{background:var(--burgundy);color:var(--cream)}
+
 .btn-burgundy:hover{background:#491327;transform:translateY(-1px)}
 
+
+
 /* === NAV === */
+
 .nav{position:sticky;top:0;z-index:50;background:rgba(42,15,28,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(183,110,121,.18)}
+
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1200px;margin:0 auto;gap:24px}
+
 .nav-brand{display:flex;align-items:center;gap:12px;color:var(--cream);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;font-weight:500}
+
 .nav-brand-mark{width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:var(--rose-soft)}
+
 .nav-brand-mark svg{width:24px;height:24px}
+
 .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+
 .nav-links a{color:var(--cream);font-size:13px;font-weight:300;letter-spacing:.05em;opacity:.85;transition:opacity .2s,color .2s;padding-bottom:3px;border-bottom:1px solid transparent}
+
 .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--rose-soft);border-bottom-color:var(--rose)}
+
 .nav .btn{padding:11px 24px;font-size:11px}
+
 @media(max-width:900px){.nav-links{display:none}.nav-inner{padding:14px 20px}}
 
+
+
 /* === HERO === */
+
 .hero{position:relative;background:var(--burgundy-dark);color:var(--cream);padding:130px 0 140px;overflow:hidden}
+
 .hero::before{
+
   content:'';position:absolute;inset:0;
+
   background-image:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/hero-bg.webp');
+
   background-size:cover;background-position:center;
+
   opacity:.32;mix-blend-mode:luminosity;
+
 }
+
 .hero::after{
+
   content:'';position:absolute;inset:0;
+
   background:radial-gradient(circle at 78% 22%, rgba(183,110,121,.18), transparent 55%),linear-gradient(180deg, transparent 0%, var(--burgundy-dark) 95%);
+
   pointer-events:none;
+
 }
+
 .hero-stars{position:absolute;inset:0;pointer-events:none;opacity:.55}
+
 .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr 1fr;gap:80px;align-items:center}
+
 .hero-text h1{margin:24px 0 28px;color:var(--cream);font-style:italic}
+
 .hero-text h1 .accent{color:var(--rose-soft);font-style:italic}
+
 .hero-text p{font-size:17px;color:rgba(255,248,244,.78);max-width:520px;margin-bottom:40px;font-weight:300}
+
 .hero-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+
 .hero-sublink{font-size:13px;color:var(--rose-soft);letter-spacing:.04em;border-bottom:1px solid rgba(183,110,121,.5);padding-bottom:2px;transition:color .2s,border-color .2s}
+
 .hero-sublink:hover{color:var(--rose);border-bottom-color:var(--rose)}
+
 .hero-card{position:relative;text-align:center}
+
 .hero-card-frame{
+
   width:100%;max-width:380px;margin:0 auto;
+
   aspect-ratio:3/4.4;
+
   border:1.5px solid var(--rose);
+
   border-top-left-radius:50% 26%;border-top-right-radius:50% 26%;
+
   overflow:hidden;
+
   background:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/reader-1.webp') center/cover no-repeat,linear-gradient(180deg,#3a1822,#1a0a13);
+
   position:relative;
+
 }
+
 .hero-card-frame::before{
+
   content:'';position:absolute;inset:0;
+
   background:radial-gradient(circle at 80% 18%, rgba(183,110,121,.4), transparent 55%);
+
   pointer-events:none;
+
 }
+
 .hero-card-meta{margin-top:24px;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--cream)}
+
 .hero-card-pill{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose-soft);padding:5px 14px;border:1px solid rgba(183,110,121,.45);border-radius:999px}
+
 .hero-card-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;font-weight:500;color:var(--cream)}
+
 .hero-card-stats{font-size:12px;color:rgba(255,248,244,.65);letter-spacing:.05em}
+
 .hero-card-stats .stars{color:var(--rose-soft);letter-spacing:1.5px;margin-right:6px}
+
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:48px}.hero{padding:72px 0 84px}}
 
+
+
 /* Scallop divider */
+
 .scallop{display:block;width:100%;height:32px;color:var(--cream)}
 
+
+
 /* === TRUST === */
+
 .trust{background:var(--cream);padding:36px 0}
+
 .trust-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+
 .trust-item{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--text-light);letter-spacing:.02em;font-weight:300}
+
 .trust-item .orn{font-size:10px;color:var(--rose);opacity:.85}
+
 .trust-item em{font-style:italic;color:var(--burgundy);font-weight:500}
 
+
+
 /* === PATHS === */
+
 .paths{background:var(--cream);padding:120px 0 110px;text-align:center}
+
 .section-head{margin-bottom:64px}
+
 .section-head h2{color:var(--burgundy);font-style:italic;margin-top:18px}
+
 .section-head .eyebrow{justify-content:center}
+
 .section-head p{color:var(--text-light);max-width:560px;margin:14px auto 0;font-size:16px;font-weight:300}
+
 .paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+
 .path-card{
+
   background:linear-gradient(180deg,var(--cream-warm) 0%,var(--cream) 100%);
+
   border:1px solid rgba(183,110,121,.25);
+
   border-top-left-radius:50% 18%;border-top-right-radius:50% 18%;
+
   padding:60px 30px 40px;text-align:center;
+
   transition:transform .3s,box-shadow .3s;
+
   position:relative;
+
 }
+
 .path-card:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(92,26,51,.12)}
+
 .path-icon{width:52px;height:52px;margin:0 auto 22px;color:var(--rose);display:flex;align-items:center;justify-content:center}
+
 .path-icon svg{width:42px;height:42px}
+
 .path-card h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:var(--burgundy);margin-bottom:10px;font-weight:500}
+
 .path-card p{font-size:14px;color:var(--text-light);margin:0 0 22px;line-height:1.7}
+
 .path-link{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);border-bottom:1px solid var(--rose);padding-bottom:2px;font-weight:400}
+
 @media(max-width:900px){.paths-grid{grid-template-columns:1fr}.paths{padding:64px 0}}
 
+
+
 /* === READER GALLERY === */
+
 .gallery{background:var(--burgundy-dark);color:var(--cream);padding:120px 0;position:relative;overflow:hidden}
+
 .gallery-stars{position:absolute;inset:0;pointer-events:none;opacity:.45}
+
 .gallery .section-head h2{color:var(--cream)}
+
 .gallery .section-head p{color:rgba(255,248,244,.65)}
+
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative;z-index:1}
+
 .reader{text-align:center;transition:transform .3s}
+
 .reader:hover{transform:translateY(-6px)}
+
 .reader-photo{
+
   width:170px;height:170px;margin:0 auto 22px;border-radius:50%;
+
   border:1.5px solid var(--rose);
+
   background:var(--burgundy-darker) center/cover;
+
   position:relative;overflow:hidden;
+
 }
+
 .reader-photo::after{
+
   content:'';position:absolute;inset:6px;border:1px dashed rgba(183,110,121,.35);border-radius:50%;
+
 }
+
 .reader h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--cream);font-weight:500;margin-bottom:4px}
+
 .reader .role{font-size:12px;font-style:italic;color:var(--rose-soft);letter-spacing:.04em;margin-bottom:10px}
+
 .reader .stat{font-size:12px;color:rgba(255,248,244,.55);margin-bottom:14px;letter-spacing:.05em}
+
 .reader .stat .stars{color:var(--rose);letter-spacing:1.5px;margin-right:5px}
+
 .reader-link{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-soft);border-bottom:1px solid rgba(183,110,121,.4);padding-bottom:2px}
+
 @media(max-width:1080px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:48px}}
+
 @media(max-width:600px){.gallery-grid{grid-template-columns:1fr}.gallery{padding:64px 0}}
 
+
+
 /* === DISCOVER === */
+
 .discover{background:var(--cream);padding:120px 0}
+
 .discover .section-head h2{color:var(--burgundy);font-style:italic}
+
 .discover-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+
 .disc{text-align:left;padding:0 12px;position:relative}
+
 .disc::before{content:'\2766';position:absolute;left:12px;top:-4px;color:var(--rose);font-size:18px}
+
 .disc h4{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;font-weight:500;color:var(--burgundy);margin:22px 0 12px;line-height:1.25}
+
 .disc p{font-size:14px;color:var(--text-light);margin:0;line-height:1.65;font-weight:300}
+
 @media(max-width:980px){.discover-grid{grid-template-columns:repeat(2,1fr)}}
+
 @media(max-width:560px){.discover-grid{grid-template-columns:1fr}.discover{padding:64px 0}}
 
+
+
 /* === TESTIMONIALS === */
+
 .tests{background:linear-gradient(180deg,var(--cream) 0%,var(--cream-warm) 100%);padding:120px 0;position:relative;overflow:hidden}
+
 .tests::before{
+
   content:'\2740';
+
   position:absolute;font-size:300px;color:var(--rose);opacity:.04;
+
   top:50%;left:50%;transform:translate(-50%,-50%);
+
   font-family:serif;
+
 }
+
 .tests .section-head h2{color:var(--burgundy);font-style:italic}
+
 .tests-stack{display:flex;flex-direction:column;gap:30px;max-width:780px;margin:0 auto}
+
 .tcard{
+
   background:#fff;border:1px solid rgba(183,110,121,.18);
+
   padding:36px 42px;border-radius:6px;box-shadow:0 14px 40px rgba(92,26,51,.08);
+
   position:relative;
+
 }
+
 .tcard:nth-child(2){margin-left:50px;margin-right:-10px}
+
 .tcard:nth-child(3){margin-left:-10px;margin-right:50px}
+
 .tcard q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.5;color:var(--text);quotes:'\201C' '\201D'}
+
 .tcard q::before,.tcard q::after{color:var(--rose);font-size:32px;line-height:0;position:relative;top:7px}
+
 .tcard footer{margin-top:20px;display:flex;align-items:center;gap:14px;font-size:13px;color:var(--text-light);font-weight:300}
+
 .tcard footer .heart{color:var(--rose)}
+
 .tcard footer strong{color:var(--burgundy);font-weight:500;letter-spacing:.04em}
+
 .tcard footer .tag{margin-left:auto;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);padding:4px 12px;border:1px solid var(--rose);border-radius:999px}
+
 @media(max-width:760px){.tcard:nth-child(2),.tcard:nth-child(3){margin-left:0;margin-right:0}.tests{padding:64px 0}}
 
+
+
 /* === QUIZ CTA === */
+
 .quiz{
+
   background:linear-gradient(135deg,var(--rose) 0%, #9c5662 100%);
+
   color:var(--cream);padding:90px 0;text-align:center;position:relative;
+
 }
+
 .quiz h2{color:var(--cream);font-style:italic;font-size:clamp(32px,3.6vw,48px)}
+
 .quiz p{color:rgba(255,248,244,.85);max-width:520px;margin:16px auto 28px;font-size:15px;font-weight:300}
 
+
+
 /* === REFLECTIONS / BLOG === */
+
 .reflect{background:var(--cream);padding:120px 0}
+
 .reflect .section-head h2{color:var(--burgundy);font-style:italic}
+
 .reflect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+
 .letter{background:#fff;border:1px solid rgba(183,110,121,.18);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+
 .letter:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(92,26,51,.1)}
+
 .letter-thumb{aspect-ratio:4/3;background:var(--burgundy-dark) center/cover;border-bottom:1px solid var(--rose)}
+
 .letter-body{padding:26px 28px 30px;flex:1;display:flex;flex-direction:column}
+
 .letter-meta{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:12px}
+
 .letter h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--burgundy);margin-bottom:10px;line-height:1.3;font-weight:500}
+
 .letter p{font-size:14px;color:var(--text-light);margin:0;flex:1;font-weight:300;line-height:1.65}
+
 @media(max-width:900px){.reflect-grid{grid-template-columns:1fr}.reflect{padding:64px 0}}
 
+
+
 /* === FINAL === */
+
 .final{background:var(--burgundy-dark);color:var(--cream);padding:120px 0;text-align:center;position:relative;overflow:hidden}
+
 .final::before{content:'';position:absolute;inset:0;background-image:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/cta-bg.webp');background-size:cover;opacity:.2;mix-blend-mode:luminosity}
+
 .final-inner{position:relative;z-index:1}
+
 .final h2{color:var(--cream);font-style:italic;max-width:760px;margin:18px auto 22px}
+
 .final p{color:rgba(255,248,244,.7);max-width:480px;margin:0 auto 34px;font-size:15px;font-weight:300}
 
+
+
 /* === FOOTER === */
+
 .foot{background:var(--burgundy-darker);color:rgba(255,248,244,.55);padding:80px 0 28px}
+
 .foot-orn{display:flex;justify-content:center;color:var(--rose);font-size:18px;letter-spacing:18px;margin-bottom:42px;opacity:.6}
+
 .foot-cols{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:50px;margin-bottom:50px;padding-bottom:50px;border-bottom:1px solid rgba(255,248,244,.06)}
+
 .foot-brand .nav-brand{margin-bottom:14px}
+
 .foot-brand p{font-size:14px;line-height:1.7;color:rgba(255,248,244,.55);margin:0;font-weight:300}
+
 .foot-col h5{font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin:0 0 18px;font-weight:500}
+
 .foot-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+
 .foot-col a{font-size:14px;color:rgba(255,248,244,.6);transition:color .2s;font-weight:300}
+
 .foot-col a:hover{color:var(--rose-soft)}
+
 .foot-bottom{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,248,244,.4);flex-wrap:wrap;gap:14px;font-weight:300}
+
 @media(max-width:980px){.foot-cols{grid-template-columns:1fr 1fr;gap:36px}.foot{padding:48px 0 24px}}
+
 </style>
 <title>Psychic Soulmate Reading — Real Psychic Readings 24/7</title>
 <meta content="max-image-preview:large" name="robots">
@@ -299,8 +537,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=global-styles-inline-css */
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Josefin+Sans:wght@300;400;500;600;700&amp;display=swap" id="psr-fonts-css" media="all" rel="stylesheet">
-<link href="https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/style.css?ver=2.0.1" id="psr-style-css" media="all" rel="stylesheet">
-<meta content="WordPress 7.1.3" name="generator"/>
+<link href="https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/style.css?ver=2.1.0" id="psr-style-css" media="all" rel="stylesheet">
+<link href="https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/psr-nav.css?ver=1793375063" id="psr-navfix-css" media="all" rel="stylesheet"/>
+<meta content="WordPress 7.1.4" name="generator"/>
 <link href="https://psychic-soulmate-reading.com/" rel="canonical"/>
 <link href="https://psychic-soulmate-reading.com/wp-content/uploads/2026/03/site_28_favicon.png" rel="icon" sizes="32x32"/>
 <link href="https://psychic-soulmate-reading.com/wp-content/uploads/2026/03/site_28_favicon.png" rel="icon" sizes="192x192"/>
@@ -382,68 +621,125 @@ body.wp-theme-psr-theme .soul-heart-badge{display:inline-flex;align-items:center
 @media(prefers-reduced-motion:reduce){body.wp-theme-psr-theme *{transition-duration:0.01ms!important}}
 </style>
 <style id="psr-landing-overrides">
+
 /* Customizer custom_css (loaded via wp_head) ships a blanket
+
    `body.wp-theme-psr-theme a { color: var(--color-primary) }` (= burgundy)
+
    that wins over .nav-brand / .nav-links a / .btn-* on specificity.
+
    These overrides match the same (0,2,1) and win on source order. */
+
 body.wp-theme-psr-theme .nav-brand,
+
 body.wp-theme-psr-theme .nav-brand:visited,
+
 body.wp-theme-psr-theme .nav-brand:hover{color:var(--cream)}
+
 body.wp-theme-psr-theme .nav-links a,
+
 body.wp-theme-psr-theme .nav-links a:visited{color:var(--cream);opacity:.88}
+
 body.wp-theme-psr-theme .nav-links a:hover,
+
 body.wp-theme-psr-theme .nav-links a.active{color:var(--rose-soft);opacity:1}
+
 body.wp-theme-psr-theme .btn-rose,
+
 body.wp-theme-psr-theme .btn-rose:hover,
+
 body.wp-theme-psr-theme .btn-burgundy,
+
 body.wp-theme-psr-theme .btn-burgundy:hover{color:var(--cream)}
+
 body.wp-theme-psr-theme .btn-ghost{color:var(--cream)}
+
 body.wp-theme-psr-theme .btn-ghost:hover{color:var(--rose-soft)}
+
 body.wp-theme-psr-theme .hero-sublink{color:var(--rose-soft)}
+
 body.wp-theme-psr-theme .hero-sublink:hover{color:var(--rose)}
+
 body.wp-theme-psr-theme .path-link,
+
 body.wp-theme-psr-theme .path-link:hover{color:var(--rose)}
+
 body.wp-theme-psr-theme .reader-link,
+
 body.wp-theme-psr-theme .reader-link:hover{color:var(--rose-soft)}
+
 body.wp-theme-psr-theme .foot-col a{color:rgba(255,248,244,.6)}
+
 body.wp-theme-psr-theme .foot-col a:hover{color:var(--rose-soft)}
+
 /* Customizer also clamps h1/h2 smaller than the landing design. Restore scale. */
+
 body.wp-theme-psr-theme .hero-text h1{font-size:clamp(44px,5.6vw,76px);line-height:1.05}
+
 body.wp-theme-psr-theme .section-head h2,
+
 body.wp-theme-psr-theme .gallery .section-head h2,
+
 body.wp-theme-psr-theme .discover .section-head h2,
+
 body.wp-theme-psr-theme .tests .section-head h2,
+
 body.wp-theme-psr-theme .reflect .section-head h2,
+
 body.wp-theme-psr-theme .quiz h2,
+
 body.wp-theme-psr-theme .final h2{font-size:clamp(34px,3.8vw,52px);line-height:1.15}
 
+
+
 /* Контраст темних секцій; правила обмежені головною сторінкою. */
+
 body.wp-theme-psr-theme.psr-landing .reader h3,
+
 body.wp-theme-psr-theme.psr-landing .final h2{color:var(--cream)}
+
 body.wp-theme-psr-theme.psr-landing .foot-col h5{color:var(--rose-soft)}
+
 body.wp-theme-psr-theme.psr-landing .nav-brand,
+
 body.wp-theme-psr-theme.psr-landing .nav-brand:visited,
+
 body.wp-theme-psr-theme.psr-landing .nav-brand:hover{color:var(--cream)!important}
+
 .landing-menu-toggle{display:none}
+
 body.psr-landing .nav a:focus-visible,
+
 body.psr-landing .landing-menu-toggle:focus-visible{outline:2px solid var(--cream);outline-offset:4px}
+
 @media(max-width:900px){
+
   body.psr-landing .nav-inner{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:10px 12px;padding:12px 20px}
+
   body.psr-landing .nav .nav-brand{min-width:0;gap:8px;font-size:20px;line-height:1.15}
+
   body.psr-landing .nav-brand-mark{flex:0 0 24px;width:24px;height:24px}
+
   body.psr-landing .nav .btn{grid-column:1/-1;justify-content:center;width:100%;padding:10px 14px;font-size:10px;line-height:1.4}
+
   body.psr-landing .nav-links{display:flex;grid-column:1/-1;flex-direction:column;gap:0}
+
   body.psr-landing.landing-nav-ready .nav-links{display:none}
+
   body.psr-landing.landing-nav-ready .nav-links.is-open{display:flex}
+
   body.psr-landing .nav-links a{display:block;padding:12px 4px;font-size:15px;line-height:1.4}
+
   body.psr-landing.landing-nav-ready .landing-menu-toggle{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid var(--rose-soft);border-radius:6px;color:var(--cream);background:transparent;font-size:24px;cursor:pointer}
+
 }
+
 </style>
 <!-- i18n hreflang (WP-Net-Control) -->
 <link href="https://psychic-soulmate-reading.com/" hreflang="en" rel="alternate"/>
 <link href="https://nl.psychic-soulmate-reading.com/" hreflang="nl" rel="alternate"/>
 <link href="https://psychic-soulmate-reading.com/" hreflang="x-default" rel="alternate"/>
-</link></link></meta></meta></link></meta></head>
+</head>
 <body class="home wp-singular page-template-default page page-id-5 wp-theme-psr-theme psr-landing">
 <header class="nav">
 <div class="nav-inner">
@@ -456,13 +752,15 @@ body.psr-landing .landing-menu-toggle:focus-visible{outline:2px solid var(--crea
 <circle cx="22" cy="9" fill="currentColor" r=".7"></circle>
 </svg>
 </span>
+
       Psychic Soulmate Reading    </a>
 <button aria-controls="psrLandingNav" aria-expanded="false" aria-label="Toggle navigation" class="landing-menu-toggle" type="button"><span aria-hidden="true">☰</span></button>
 <ul aria-label="Main navigation" class="nav-links" id="psrLandingNav">
 <li><a class="active" href="https://psychic-soulmate-reading.com/soulmate-reading/">Soulmate Reading</a></li>
 <li><a href="https://psychic-soulmate-reading.com/love-compatibility/">Love Compatibility</a></li>
 <li><a href="https://psychic-soulmate-reading.com/timing-and-destiny/">Timing &amp; Destiny</a></li>
-<li><a href="https://psychic-soulmate-reading.com/our-readers/">Our Readers</a></li>
+<li><a data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/">Our Readers</a></li>
+<li><a data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/red-thread/">Red Thread</a></li>
 <li><a href="https://psychic-soulmate-reading.com/blog/">Blog</a></li>
 </ul>
 <a class="btn btn-rose" href="/go/" rel="nofollow sponsored">Discover Your Soulmate →</a>
@@ -497,11 +795,11 @@ body.psr-landing .landing-menu-toggle:focus-visible{outline:2px solid var(--crea
 </div>
 </div>
 <aside aria-label="Featured reader" class="hero-card">
-<div class="hero-card-frame"></div>
+<a aria-label="View Celeste Morano's profile" class="hero-card-frame" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/celeste-morano/" style="display:block"></a>
 <div class="hero-card-meta">
 <span class="hero-card-pill">Tonight's available reader</span>
-<span class="hero-card-name">Celeste Morano · Soulmate Specialist</span>
-<span class="hero-card-stats"><span class="stars">★★★★★</span>4.9 · 3,140 readings · 14 yrs</span>
+<a class="hero-card-name" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/celeste-morano/">Celeste Morano · Soulmate Specialist</a>
+<span class="hero-card-stats">14 years of readings · <a class="hero-sublink" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/celeste-morano/">View profile</a></span>
 </div>
 </aside>
 </div>
@@ -562,32 +860,32 @@ body.psr-landing .landing-menu-toggle:focus-visible{outline:2px solid var(--crea
 </div>
 <div class="gallery-grid">
 <article class="reader">
-<div class="reader-photo" style="background-image:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/reader-1.webp')"></div>
-<h3>Celeste Morano</h3>
+<a aria-label="View Celeste Morano's profile" class="reader-photo" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/celeste-morano/" style="display:block;background-image:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/reader-1.webp')"></a>
+<h3><a data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/celeste-morano/">Celeste Morano</a></h3>
 <div class="role">Soulmate Specialist</div>
-<div class="stat"><span class="stars">★★★★★</span>4.9 · 14 yrs</div>
-<a class="reader-link" href="https://psychic-soulmate-reading.com/our-readers/">Read her bio →</a>
+<div class="stat">14 years of readings</div>
+<a class="reader-link" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/celeste-morano/">View profile →</a>
 </article>
 <article class="reader">
-<div class="reader-photo" style="background-image:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/reader-2.webp')"></div>
-<h3>Isabelle Fontaine</h3>
+<a aria-label="View Isabelle Fontaine's profile" class="reader-photo" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/isabelle-fontaine/" style="display:block;background-image:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/reader-2.webp')"></a>
+<h3><a data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/isabelle-fontaine/">Isabelle Fontaine</a></h3>
 <div class="role">Love Timing Expert</div>
-<div class="stat"><span class="stars">★★★★★</span>4.9 · 12 yrs</div>
-<a class="reader-link" href="https://psychic-soulmate-reading.com/our-readers/">Read her bio →</a>
+<div class="stat">12 years of readings</div>
+<a class="reader-link" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/isabelle-fontaine/">View profile →</a>
 </article>
 <article class="reader">
-<div class="reader-photo" style="background-image:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/reader-1.webp')"></div>
-<h3>Maya Sinclair</h3>
+<a aria-label="View Maya Sinclair's profile" class="reader-photo" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/maya-sinclair/" style="display:block;background-image:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/maya-portrait.webp')"></a>
+<h3><a data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/maya-sinclair/">Maya Sinclair</a></h3>
 <div class="role">Compatibility Reader</div>
-<div class="stat"><span class="stars">★★★★★</span>4.8 · 10 yrs</div>
-<a class="reader-link" href="https://psychic-soulmate-reading.com/our-readers/">Read her bio →</a>
+<div class="stat">10 years of readings</div>
+<a class="reader-link" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/maya-sinclair/">View profile →</a>
 </article>
 <article class="reader">
-<div class="reader-photo" style="background-image:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/reader-2.webp')"></div>
-<h3>Luna Rivera</h3>
+<a aria-label="View Luna Rivera's profile" class="reader-photo" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/luna-rivera/" style="display:block;background-image:url('https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/img/luna-portrait.webp')"></a>
+<h3><a data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/luna-rivera/">Luna Rivera</a></h3>
 <div class="role">Destiny Guide</div>
-<div class="stat"><span class="stars">★★★★★</span>4.9 · 11 yrs</div>
-<a class="reader-link" href="https://psychic-soulmate-reading.com/our-readers/">Read her bio →</a>
+<div class="stat">11 years of readings</div>
+<a class="reader-link" data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/luna-rivera/">View profile →</a>
 </article>
 </div>
 </div>
@@ -674,6 +972,15 @@ body.psr-landing .landing-menu-toggle:focus-visible{outline:2px solid var(--crea
 </div>
 </div>
 </section>
+<!-- 8b. RED THREAD LOOM -->
+<section class="home-loom">
+<div class="container">
+<span class="eyebrow">AI tool</span>
+<h2><em>Tie your red thread.</em></h2>
+<p>Five small knots about the connection you hope for, then a reader's voice. The Red Thread Loom writes an AI reflection: a portrait in words, an imagined meeting and three signs to notice. It is automated, never a live session.</p>
+<a class="btn btn-rose" data-nebula-preserve="1" href="/go/" rel="nofollow sponsored">Open the Red Thread Loom →</a>
+</div>
+</section>
 <!-- 9. FINAL CTA -->
 <section class="final">
 <div class="container final-inner">
@@ -692,11 +999,12 @@ body.psr-landing .landing-menu-toggle:focus-visible{outline:2px solid var(--crea
 <div class="foot-brand">
 <a class="nav-brand" href="https://psychic-soulmate-reading.com/">
 <span class="nav-brand-mark"><svg fill="none" height="22" stroke="#B76E79" stroke-width="1.2" viewbox="0 0 24 24" width="22"><path d="M16 4a8 8 0 11-9 9 6 6 0 009-9z"></path><circle cx="19.5" cy="5" fill="#B76E79" r="1"></circle></svg></span>
+
           Psychic Soulmate Reading        </a>
 <p>Compassionate love readings, woven from intuition, astrology, and the threads of destiny.</p>
 </div>
 <div class="foot-col"><h5>Discover</h5><ul><li><a href="https://psychic-soulmate-reading.com/soulmate-reading/">Soulmate Reading</a></li><li><a href="https://psychic-soulmate-reading.com/love-compatibility/">Love Compatibility</a></li><li><a href="https://psychic-soulmate-reading.com/timing-and-destiny/">Timing &amp; Destiny</a></li></ul></div>
-<div class="foot-col"><h5>Readings</h5><ul><li><a href="https://psychic-soulmate-reading.com/our-readers/">Our Readers</a></li><li><a href="https://psychic-soulmate-reading.com/testimonials/">Testimonials</a></li><li><a href="https://psychic-soulmate-reading.com/faq/">FAQ</a></li></ul></div>
+<div class="foot-col"><h5>Readings</h5><ul><li><a data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/our-readers/">Our Readers</a></li><li><a data-nebula-preserve="1" href="https://psychic-soulmate-reading.com/red-thread/">Red Thread Loom</a></li><li><a href="https://psychic-soulmate-reading.com/testimonials/">Testimonials</a></li><li><a href="https://psychic-soulmate-reading.com/faq/">FAQ</a></li></ul></div>
 <div class="foot-col"><h5>Resources</h5><ul><li><a href="https://psychic-soulmate-reading.com/blog/">Blog</a></li><li><a href="https://psychic-soulmate-reading.com/about/">About</a></li><li><a href="https://psychic-soulmate-reading.com/contact/">Contact</a></li></ul></div>
 <div class="foot-col"><h5>Legal</h5><ul><li><a href="https://psychic-soulmate-reading.com/privacy-policy/">Privacy</a></li><li><a href="https://psychic-soulmate-reading.com/terms/">Terms</a></li><li><a href="https://psychic-soulmate-reading.com/disclaimer/">Disclaimer</a></li></ul></div>
 </div>
@@ -709,9 +1017,9 @@ body.psr-landing .landing-menu-toggle:focus-visible{outline:2px solid var(--crea
 <script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/psr-theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
-<script id="psr-nav-js" src="https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/js/navigation.js?ver=2.0.1"></script>
+<script id="psr-nav-js" src="https://psychic-soulmate-reading.com/wp-content/themes/psr-theme/assets/js/navigation.js?ver=2.1.0"></script>
 <script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://psychic-soulmate-reading.com/wp-includes/js/wp-emoji-release.min.js?ver=7.1.3"}}
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://psychic-soulmate-reading.com/wp-includes/js/wp-emoji-release.min.js?ver=7.1.4"}}
 </script>
 <script type="module">
 /*! This file is auto-generated */

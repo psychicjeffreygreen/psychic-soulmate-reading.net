@@ -1,0 +1,36 @@
+/* Виправлення навігації лендингу: пункти без переносу рядків, шість пунктів не ламаються,
+   гамбургер до 1100px, кнопка CTA ховається на проміжних ширинах. Завантажується на головній і сторінках спеціалістів. */
+body.psr-landing .nav-inner{max-width:1360px;gap:20px}
+body.psr-landing .nav-brand{white-space:nowrap}
+body.psr-landing .nav-links{gap:22px}
+body.psr-landing .nav-links a{white-space:nowrap;font-size:13px}
+body.psr-landing .nav .btn{white-space:nowrap}
+@media(min-width:1101px) and (max-width:1260px){body.psr-landing .nav .btn{display:none}}
+@media(min-width:901px) and (max-width:1100px){
+  body.psr-landing .nav-links{display:none}
+  body.psr-landing .nav-inner{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:10px 12px;padding:12px 24px}
+  body.psr-landing .nav .btn{grid-column:1/-1;justify-content:center;width:100%;padding:10px 14px}
+  body.psr-landing .nav-links{grid-column:1/-1;flex-direction:column;gap:0}
+  body.psr-landing.landing-nav-ready .nav-links{display:none}
+  body.psr-landing.landing-nav-ready .nav-links.is-open{display:flex}
+  body.psr-landing .nav-links a{display:block;padding:12px 4px;font-size:15px;line-height:1.4}
+  body.psr-landing.landing-nav-ready .landing-menu-toggle{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid var(--rose-soft);border-radius:6px;color:var(--cream);background:transparent;font-size:24px;cursor:pointer}
+}
+
+/* Головна: посилання у картках спеціалістів (Customizer фарбує a у burgundy) і смуга Red Thread Loom. */
+body.psr-landing a.hero-card-name,body.psr-landing a.hero-card-name:hover,body.psr-landing .reader h3 a,body.psr-landing .reader h3 a:hover{color:var(--cream)}
+body.psr-landing .reader h3 a:hover,body.psr-landing a.hero-card-name:hover{color:var(--rose-soft)}
+body.psr-landing .hero-card-stats a{color:var(--rose-soft);border-bottom:1px solid rgba(183,110,121,.5)}
+body.psr-landing .reader-photo{aspect-ratio:3/4}
+.home-loom{background:#2f0e1d;color:var(--cream);padding:96px 0;text-align:center;position:relative;overflow:hidden}
+.home-loom::before{content:'';position:absolute;left:0;right:0;top:108px;height:1px;background:linear-gradient(90deg,transparent,#d9435f 20%,#d9435f 80%,transparent);opacity:.5}
+.home-loom .container{position:relative}
+.home-loom .eyebrow{justify-content:center;background:#2f0e1d;padding:0 22px}
+body.psr-landing .home-loom h2{color:var(--cream);font-size:clamp(34px,3.8vw,52px);margin:14px 0 16px;font-style:italic}
+.home-loom p{max-width:600px;margin:0 auto 28px;color:rgba(255,248,244,.8);font-size:16px;font-weight:300}
+@media(max-width:900px){.home-loom{padding:64px 0}}
+
+/* Футер лендингу: колонки не повинні розпирати сітку на вузьких екранах. */
+body.psr-landing .foot-cols>*{min-width:0}
+body.psr-landing .foot-col a{overflow-wrap:anywhere}
+@media(max-width:600px){body.psr-landing .foot-cols{grid-template-columns:1fr 1fr;gap:28px}body.psr-landing .foot-brand{grid-column:1/-1}}
