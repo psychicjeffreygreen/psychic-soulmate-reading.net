@@ -1,7 +1,7 @@
 /*
 Theme Name: psr-theme
 Author: WP Net Control
-Version: 2.1.0
+Version: 2.1.1
 Text Domain: psr-theme
 */
 
@@ -679,3 +679,12 @@ body.wp-theme-psr-theme .site-footer h3,
 body.wp-theme-psr-theme .site-footer h4 {
   color: #fff;
 }
+
+/* Листопад: контраст CTA та тексту квізу без зміни інших секцій. */
+body.wp-theme-psr-theme.psr-landing .btn-rose{background:#914755!important;color:#fff8f4!important}
+body.wp-theme-psr-theme.psr-landing .btn-rose:hover{background:#773847!important}
+body.wp-theme-psr-theme.psr-landing .path-link,
+body.wp-theme-psr-theme.psr-landing .path-link:hover{color:#914755!important;border-color:#914755}
+body.wp-theme-psr-theme.psr-landing .quiz{background:linear-gradient(135deg,#854252,#713747)!important}
+body.wp-theme-psr-theme.psr-landing .quiz h2{color:#fff8f4!important}
+body.wp-theme-psr-theme.psr-landing .quiz p{color:#fff8f4!important}
